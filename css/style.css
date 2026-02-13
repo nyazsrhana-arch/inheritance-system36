@@ -1,0 +1,259 @@
+/* إعدادات عامة */
+:root {
+    --primary: #10a37f;
+    --secondary: #5436da;
+    --success: #10b981;
+    --danger: #ef4444;
+    --bg: #f7f7f8;
+    --text: #1f2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* الهيدر */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* المحتوى الرئيسي */
+main {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+.section h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* النماذج */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* الأزرار */
+.btn {
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0d8a6a;
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--secondary);
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background: #4329b5;
+}
+
+/* قائمة الورثة */
+.heir-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heir-item.muslim {
+    border-right: 4px solid var(--success);
+}
+
+.heir-item.non-muslim {
+    border-right: 4px solid var(--danger);
+}
+
+.heir-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.heir-delete {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* النتائج */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+}
+
+.results-table th {
+    background: var(--primary);
+    color: white;
+}
+
+.results-table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.results-summary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* الفوتر */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* الأنيميشن */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .section {
+        padding: 15px;
+    }
+    
+    .btn-primary {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* الطباعة */
+@media print {
+    header,
+    footer,
+    .btn,
+    #calculateSection {
+        display: none !important;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    .section {
+        break-inside: avoid;
+    }
+  }
